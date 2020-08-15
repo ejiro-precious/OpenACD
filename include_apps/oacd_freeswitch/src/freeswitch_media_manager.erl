@@ -204,7 +204,7 @@ end).
 -record(state, {
 	nodename :: atom(),
 	freeswitch_up = false :: boolean(),
-	call_dict = dict:new() :: dict(),
+	call_dict = dict:new() :: dict:dict(),
 	dialstring = "" :: string(),
 	eventserver :: pid() | 'undefined',
 	xmlserver :: pid() | 'undefined',
