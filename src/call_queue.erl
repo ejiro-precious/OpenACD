@@ -48,7 +48,7 @@
 -include("call.hrl").
 -include("queue.hrl").
 
--type(call_queue() :: gb_tree()).
+-type(call_queue() :: gb_trees:tree()).
 
 -export([
 	start/2,
