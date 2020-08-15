@@ -66,3 +66,6 @@ missing
 
 #editor swap files
 *~
+
+# IntelliJ
+.idea

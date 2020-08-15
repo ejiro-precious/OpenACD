@@ -50,14 +50,14 @@
 -define(ALERT(Message, Args), ?debugFmt("[~p][~p][~p]~n	ALERT: ~s~n", [erlang:localtime(), node(), self(), lists:flatten(io_lib:format(Message, Args))])).
 -define(EMERGENCY(Message, Args), ?debugFmt("[~p][~p][~p]~n	EMERGENCY: ~s~n", [erlang:localtime(), node(), self(), lists:flatten(io_lib:format(Message, Args))])).
 -else.
--define(DEBUG(Message, Args), cpxlog:debug(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(INFO(Message, Args), cpxlog:info(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(NOTICE(Message, Args), cpxlog:notice(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(WARNING(Message, Args), cpxlog:warning(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(ERROR(Message, Args), cpxlog:error(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(CRITICAL(Message, Args), cpxlog:critical(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(ALERT(Message, Args), cpxlog:alert(now(), ?MODULE, ?LINE, self(), Message, Args)).
--define(EMERGENCY(Message, Args), cpxlog:emergency(now(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(DEBUG(Message, Args), cpxlog:debug(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(INFO(Message, Args), cpxlog:info(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(NOTICE(Message, Args), cpxlog:notice(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(WARNING(Message, Args), cpxlog:warning(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(ERROR(Message, Args), cpxlog:error(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(CRITICAL(Message, Args), cpxlog:critical(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(ALERT(Message, Args), cpxlog:alert(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
+-define(EMERGENCY(Message, Args), cpxlog:emergency(erlang:system_time(), ?MODULE, ?LINE, self(), Message, Args)).
 -endif.
 
 -ifdef(TEST).
