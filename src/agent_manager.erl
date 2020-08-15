@@ -66,7 +66,7 @@
 
 -record(state, {
 	agents = dict:new() :: dict:dict(),
-	route_list = gb_trees:empty() :: gb_tree(),
+	route_list = gb_trees:empty() :: gb_trees:tree(),
 	lists_requested = 0 :: integer()
 }).
 
