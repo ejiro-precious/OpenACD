@@ -100,7 +100,7 @@
 	life_timer = undefined :: any(),
 	%mode = success :: 'success' | 'failure' | 'fail_once',
 	mediaload :: 'undefined' | 'mediaload' | 'true',
-	fail = dict:new() :: dict(),
+	fail = dict:new() :: dict:dict(),
 	caseid :: string() | 'undefined'
 	}).
 
