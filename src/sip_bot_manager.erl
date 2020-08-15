@@ -161,7 +161,7 @@
 	eventserver :: pid() | 'undefined',
 	xmlserver :: pid() | 'undefined',
 	xmlserver_opts = [] :: start_options(),
-	bot_dict = dict:new() :: dict(),
+	bot_dict = dict:new() :: dict:dict(),
 	bot_opts = [] :: [sip_bot_option()]
 }).
 

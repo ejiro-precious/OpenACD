@@ -783,12 +783,12 @@ spawn_summarizer(UsortedTransactions, #call{id = CallID} = Callrec) ->
 %% dict :: key :: `transaction_type()' of `inqueue, ringing, oncall, wrapup'.
 %% dict :: value :: `{total(), breakdown()}'
 %% breakdown :: `[{agent_login() | queue_name(), total()}]'
--spec(summarize/1 :: (Transactions :: [#cdr_raw{}]) -> [dict()]).
+-spec(summarize/1 :: (Transactions :: [#cdr_raw{}]) -> [dict:dict()]).
 summarize(Transactions) ->
 	%?DEBUG("Summarizing ~p", [Transactions]),
 	summarize(Transactions, dict:new()).
 
--spec(summarize/2 :: (Transactions :: [#cdr_raw{}], Sumacc :: dict()) -> any()).
+-spec(summarize/2 :: (Transactions :: [#cdr_raw{}], Sumacc :: dict:dict()) -> any()).
 summarize([], Acc) ->
 	dict:to_list(Acc);
 summarize([#cdr_raw{transaction = inqueue} = Cdr | Tail], Acc) ->
@@ -812,7 +812,7 @@ summarize([#cdr_raw{transaction = wrapup} = Cdr | Tail], Acc) ->
 summarize([_ | Tail], Acc) ->
 	summarize(Tail, Acc).
 
--spec(summarize/4 :: (Cdr :: #cdr_raw{}, Catagory :: transaction_type(), Individual :: any(), Acc :: dict()) -> dict()).
+-spec(summarize/4 :: (Cdr :: #cdr_raw{}, Catagory :: transaction_type(), Individual :: any(), Acc :: dict:dict()) -> dict:dict()).
 summarize(Cdr, Catagory, Individual, Acc) ->
 	{Total, Propdict} = case dict:find(Catagory, Acc) of
 		error ->

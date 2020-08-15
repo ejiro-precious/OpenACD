@@ -91,10 +91,10 @@
 	max_t :: non_neg_integer(),
 	dsn :: string(),
 	trace :: 'undefined' | 'trace',
-	agents :: dict(),
-	calls :: dict(),
-	callqueuemap :: dict(),
-	callagentmap :: dict()
+	agents :: dict:dict(),
+	calls :: dict:dict(),
+	callqueuemap :: dict:dict(),
+	callagentmap :: dict:dict()
 }).
 
 -type(state() :: #state{}).

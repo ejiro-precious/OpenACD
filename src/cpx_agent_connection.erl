@@ -171,7 +171,7 @@
 -record(state, {
 	salt :: any(),
 	agent :: #agent{},
-	channels = dict:new() :: dict(),
+	channels = dict:new() :: dict:dict(),
 	connection :: pid(),
 	supervisor_state :: any()
 }).

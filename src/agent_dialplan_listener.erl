@@ -38,7 +38,7 @@
 -endif.
 
 -record(state, {
-	registry = dict:new() :: dict(),
+	registry = dict:new() :: dict:dict(),
 	start_opts = [] :: start_opts()
 }).
 

@@ -44,7 +44,7 @@
 -behaviour(gen_leader).
 
 -record(state, {
-	qdict = dict:new() :: dict()
+	qdict = dict:new() :: dict:dict()
 }).
 
 -type(state() :: #state{}).

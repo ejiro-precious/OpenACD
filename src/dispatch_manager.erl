@@ -61,7 +61,7 @@
 
 -record(state, {
 	dispatchers = [] :: [pid()],
-	agents = dict:new() :: dict(),
+	agents = dict:new() :: dict:dict(),
 	channel_count = 0 :: non_neg_integer()
 	}).
 

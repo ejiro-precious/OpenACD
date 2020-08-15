@@ -57,10 +57,10 @@
 
 -record(state, {
 		file :: {string(), pid(), string()},
-		agents :: dict(),
-		calls :: dict(),
-		callqueuemap :: dict(),
-		callagentmap :: dict()
+		agents :: dict:dict(),
+		calls :: dict:dict(),
+		callqueuemap :: dict:dict(),
+		callagentmap :: dict:dict()
 	}).
 
 -type(state() :: #state{}).

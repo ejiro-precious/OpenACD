@@ -275,7 +275,7 @@
 -record(state, {
 	salt :: any(),
 	agent_fsm :: pid() | 'undefined',
-	agent_channels = dict:new() :: dict(),
+	agent_channels = dict:new() :: dict:dict(),
 	current_call :: #call{} | 'undefined' | 'expect',
 	mediaload :: any(),
 	poll_queue = [] :: [{struct, [{binary(), any()}]}],

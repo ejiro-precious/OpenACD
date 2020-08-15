@@ -239,7 +239,7 @@ list_map_with_index(Fun, [H|T], Counter, Acc) ->
 
 %% @doc Find the key(s) in the dictory by it's value.  Return's `error' if
 %% the value is not in the dictionary.
--spec(dict_find_by_value/2 :: (Value :: any(), Dict :: dict()) -> 'error' | {'ok', [any()]}).
+-spec(dict_find_by_value/2 :: (Value :: any(), Dict :: dict:dict()) -> 'error' | {'ok', [any()]}).
 dict_find_by_value(InValue, Dict) ->
 	List = dict:to_list(Dict),
 	Found = [K || {K, Value} <- List, Value == InValue],

@@ -65,7 +65,7 @@
 %-type(sort_key() :: {rotations(), all_skill_flag(), skill_list_length(), went_avail_at()}).
 
 -record(state, {
-	agents = dict:new() :: dict(),
+	agents = dict:new() :: dict:dict(),
 	route_list = gb_trees:empty() :: gb_tree(),
 	lists_requested = 0 :: integer()
 }).
